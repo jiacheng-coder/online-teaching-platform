@@ -1,0 +1,43 @@
+/*
+变量参考
+https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss
+*/
+@forward 
+"element-plus/theme-chalk/src/common/var.scss" 
+with (
+	$colors: (
+	
+		"primary": (
+			"base": #5058E5,
+		)
+	),
+	
+	// 修改 button 间距 - 横向
+	$button-padding-horizontal: (
+		'large'   : 20px,
+		'default' : 13px,
+		'small'   : 10px,
+	),
+	$button-padding-vertical:(
+		'large'   : 8px,
+		'default' : 6px,
+		'small'   : 5px
+	),
+
+	/* 对话框 */
+	$dialog:(
+		'padding-primary':18px
+	),
+	
+	/* 输入框 */
+	$input-height: (
+		'large'   : 40px,
+		'default' : 38px,
+		'small'   : 26px,
+	),
+	$input-line-height: (
+		'large'   : 40px,
+		'default' : 38px,
+		'small'   : 26px,
+	)
+);

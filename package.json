@@ -1,0 +1,31 @@
+{
+  "name": "GraceVueAdmin",
+  "version": "1.0.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.0.6",
+    "@wangeditor/editor": "^5.1.21",
+    "@wangeditor/editor-for-vue": "^5.1.12",
+    "axios": "^0.27.2",
+    "echarts": "^5.3.3",
+    "element-plus": "^2.2.9",
+    "js-md5": "^0.7.3",
+    "nprogress": "^0.2.0",
+    "qs": "^6.10.5",
+    "sass": "^1.52.3",
+    "unplugin-auto-import": "^0.8.8",
+    "unplugin-vue-components": "^0.19.6",
+    "vue": "^3.2.25",
+    "vue-cropper": "^1.0.3",
+    "vue-router": "^4.0.16",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "vite": "^2.9.9"
+  }
+}
