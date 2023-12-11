@@ -1,5 +1,6 @@
 // 菜单
 export default [
+  // 系统信息
   {
     label: '系统信息',
     icon: 'ga-icon icon-system',
@@ -21,6 +22,7 @@ export default [
       },
     ],
   },
+  // 用户会员
   {
     label: '用户会员',
     icon: 'ga-icon icon-members',
@@ -61,6 +63,7 @@ export default [
       },
     ],
   },
+  // 内容管理
   {
     label: '内容管理',
     icon: 'ga-icon icon-article',
@@ -83,38 +86,7 @@ export default [
       },
     ],
   },
-  // 配置菜单
-  // {
-  //   label: '测试菜单',
-  //   // 此处请参考图标库扩展手册部分，此处为图标样式名称
-  //   icon: 'ga-icon icon-article',
-  //   pages: [
-  //     // 菜单下功能页面配置
-  //     {
-  //       label: '测试功能',
-  //       // 功能路径 对应于下面的视图路径，首字母大写
-  //       path: '/Test/Index',
-  //       // 注册真实页面组件
-  //       component: () => import('./views/Test/Index.vue'),
-  //       // 附加权限，如 增加、编辑、删除 数据等等，
-  //       // 附加权限适用于进用于权限控制，不需要实际页面的场景
-  //       addition: [
-  //         // 需要注册页面组件演示
-  //         // 如 添加数据页面
-  //         {
-  //           label: '添加数据',
-  //           path: 'Add',
-  //           component: () => import('./views/Test/Add.vue'),
-  //         },
-  //         // 不需要注册页面组件演示
-  //         // 编辑数据功能，没有实际的路由页面，如使用弹窗形式打开编辑窗口
-  //         { label: '编辑数据', path: 'Edit' },
-  //         // 删除数据功能
-  //         { label: '删除数据', path: 'Delete' },
-  //       ],
-  //     },
-  //   ],
-  // },
+  // 课程班级
   {
     label: '课程班级',
     // 此处请参考图标库扩展手册部分，此处为图标样式名称
@@ -129,6 +101,52 @@ export default [
         component: () => import('./views/Course/Index.vue'),
         // 附加权限，如 增加、编辑、删除 数据等等，
         // 附加权限适用于进用于权限控制，不需要实际页面的场景
+        addition: [
+          // 需要注册页面组件演示
+          // 如 添加数据页面
+          {
+            label: '添加数据',
+            path: 'Add',
+            component: () => import('./views/Course/Add.vue'),
+          },
+          // 不需要注册页面组件演示
+          // 编辑数据功能，没有实际的路由页面，如使用弹窗形式打开编辑窗口
+          { label: '编辑数据', path: 'Edit' },
+          // 删除数据功能
+          { label: '删除数据', path: 'Delete' },
+        ],
+      },
+    ],
+  },
+  // 测试菜单
+  {
+    label: '测试菜单',
+    // 此处请参考图标库扩展手册部分，此处为图标样式名称
+    icon: 'ga-icon icon-article',
+    pages: [
+      // 菜单下功能页面配置
+      {
+        label: '测试功能',
+        // 功能路径 对应于下面的视图路径，首字母大写
+        path: '/Test/Index',
+        // 注册真实页面组件
+        component: () => import('./views/Test/Index.vue'),
+        // 附加权限，如 增加、编辑、删除 数据等等，
+        // 附加权限适用于进用于权限控制，不需要实际页面的场景
+        addition: [
+          // 需要注册页面组件演示
+          // 如 添加数据页面
+          {
+            label: '添加数据',
+            path: 'Add',
+            component: () => import('./views/Test/Add.vue'),
+          },
+          // 不需要注册页面组件演示
+          // 编辑数据功能，没有实际的路由页面，如使用弹窗形式打开编辑窗口
+          { label: '编辑数据', path: 'Edit' },
+          // 删除数据功能
+          { label: '删除数据', path: 'Delete' },
+        ],
       },
     ],
   },

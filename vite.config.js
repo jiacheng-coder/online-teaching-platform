@@ -54,14 +54,14 @@ export default defineConfig({
       ],
     }),
   ],
-  server: {
-    port: '3000',
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8800/api',
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, ''), // 不可以省略rewrite
-      },
-    },
-  },
+  // server: {
+  //   port: '3001',
+  //   proxy: {
+  //     '/api': {
+  //       target: 'http://localhost:8800/api',
+  //       changeOrigin: true,
+  //       rewrite: path => path.replace(/^\/api/, ''), // 不可以省略rewrite
+  //     },
+  //   },
+  // },
 })

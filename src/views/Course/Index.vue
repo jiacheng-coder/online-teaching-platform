@@ -7,59 +7,92 @@
     </template>
     <template v-slot:headerRight>
       <div style="font-size:1.2em;" class="ga-color-gray">
-        <el-icon>
-          <aim />
-        </el-icon>
         左侧功能
       </div>
     </template>
     <template v-slot:body>
-      <div class="system-banner">
-        <el-row align="middle">
-          <div style="width:180px;">
-            <img style="width:100%;"
-              src="https://staticfilesali.oss-accelerate.aliyuncs.com/static/images/2021/banner.png" />
-          </div>
-          <div style="margin-left:30px;">
-            <p style="font-size:1.66em; color:#FFFFFF;">
-              欢迎使用 Grace Vue Admin
-            </p>
-            <p style="font-size:15px; line-height:2em; color:#FFFFFF; margin-top:12px;">
-              Grace Vue Admin 是一款基于 vue3 及 Element Plus 的后台开发脚手架
-            </p>
-            <div style="margin-top:15px;">
-              <a href="https://www.lesscode.work/sections/622800946ba41.html" target="_blank"
-                style="color:#FFFFFF; background-color:rgb(16, 185, 129);" class="ga-link-button ga-icon">访问官网 </a>
+      <el-row :gutter="20">
+        <el-col :span="8" v-for="course in courses" :key="course.id">
+          <el-card shadow="hover" class="course-card" :style="{ backgroundColor: course.backgroundColor }">
+            <div slot="header" class="card-header">
+              <span>{{ course.name }}</span>
+              <el-dropdown>
+                <el-button class="button" type="primary"
+                  :style="{ backgroundColor: course.backgroundColor, border: 'none' }">
+                  ...
+                </el-button>
+                <template #dropdown>
+                  <el-dropdown-menu>
+                    <el-dropdown-item>Action 1</el-dropdown-item>
+                    <el-dropdown-item>Action 2</el-dropdown-item>
+                    <el-dropdown-item>Action 3</el-dropdown-item>
+                    <el-dropdown-item>Action 4</el-dropdown-item>
+                    <el-dropdown-item>Action 5</el-dropdown-item>
+                  </el-dropdown-menu>
+                </template>
+              </el-dropdown>
             </div>
-          </div>
-        </el-row>
-      </div>
-      <div style="margin-top:35px;">
-        其他内容 ...
-      </div>
-    </template>
-    <template v-slot:footer>
-      <div style="font-size:1.2rem; text-align:center; padding:10px 0;" class="ga-color-gray">
-        底部布局...
-      </div>
+            <div slot="footer" class="card-content">
+              <p>{{ course.teacher }}</p>
+              <p>{{ course.semester }}</p>
+            </div>
+          </el-card>
+        </el-col>
+      </el-row>
     </template>
   </ga-page>
 </template>
 
 <script setup>
-import { Aim } from '@element-plus/icons-vue';
+import { ref, onMounted } from 'vue'
+import axios from 'axios';
+onMounted(() => {
+  let config = {
+    method: 'get',
+    url: '/api/test',
+  };
+  axios(config).then((response) => {
+    console.log("Here:", response);
+  }).catch((error) => {
+    console.log(error.data);
+  });
+});
+const courses = ref([
+  { id: 1, name: '课程1', teacher: '老师1', backgroundColor: '#6AD0A9', semester: '2023年秋' },
+  { id: 2, name: '课程2', teacher: '老师2', backgroundColor: '#A27AF5', semester: '2023年秋' },
+  { id: 3, name: '课程3', teacher: '老师3', backgroundColor: '#EF8689', semester: '2023年秋' },
+  { id: 4, name: '课程4', teacher: '老师3', backgroundColor: '#EF8689', semester: '2023年秋' },
+  { id: 5, name: '课程5', teacher: '老师3', backgroundColor: '#EF8689', semester: '2023年秋' },
+])
 </script>
 
-<style scoped>
-.system-banner {
-  border-radius: 8px;
-  box-shadow: rgb(100 116 139 / 6%) 0px 1px 1px;
-  background-image: none;
-  overflow: hidden;
-  -webkit-box-align: center;
+<style scoped lang="scss">
+.course-card {
+  border-radius: 10px;
+  color: #ffffff;
+  /* box-shadow: "0 0 0 20px transparent"; */
+  /* padding: '10px' */
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  background-color: #5058E5;
-  padding: 25px;
-  margin-top: 10px;
+  margin-bottom: 2rem;
+  font-size: 23px;
+  font-weight: 500;
+
+  .button {
+    font-size: 23px;
+    font-weight: 700;
+    padding: 15px 10px;
+  }
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
 }
 </style>
+
